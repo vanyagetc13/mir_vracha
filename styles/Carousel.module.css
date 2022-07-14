@@ -1,0 +1,11 @@
+.main {
+    position: relative;
+    margin: 250px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main img {
+    border-radius: 50%;
+    z-index: 10;
+}

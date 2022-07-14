@@ -1,0 +1,15 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 34px 0 10px;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 50px;
+}
+
+.header h2 {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 50px;
+}

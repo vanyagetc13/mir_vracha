@@ -1,0 +1,24 @@
+.symptom {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 33%;
+    transform-origin: 50%;
+    transform: rotate(calc(360deg / var(--all) * var(--i))) translateX(-250px);
+}
+
+.symptom img {
+    cursor: pointer;
+    transform: rotate(calc(360deg / var(--n_all) * var(--i)));
+}
+
+.text {
+    display: block;
+    position: absolute;
+}
+
+.cover {
+    position: relative;
+}
