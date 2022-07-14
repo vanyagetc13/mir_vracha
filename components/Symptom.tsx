@@ -1,15 +1,26 @@
 import st from "../styles/Symptom.module.css"
-import Image from "next/image"
-import { useState } from "react";
+import Image, { StaticImageData } from "next/image"
+import { useState, CSSProperties } from "react";
 
-const Symptom = ({symptom, i}) => {
+interface Symptom {
+    icon: StaticImageData;
+    id:number;
+    text:string;
+}
+
+interface SymptomProps {
+    symptom: Symptom;
+    i: number;
+}
+
+const Symptom = ({symptom, i}: SymptomProps) => {
 
     const [visible, setVisible] = useState(false);
     const clickHandler = () => {
         setVisible((prev) => !prev);
     };
 
-    const side_template = (i) => `translateX(
+    const side_template = (i:number):string => `translateX(
         ${
             i + 1 > 2 && i + 1 < 6
                 ? "135px"
@@ -18,14 +29,14 @@ const Symptom = ({symptom, i}) => {
                 : "0"
         })`;
 
-    const center_template = (i) =>
+    const center_template = (i:number):string =>
         `translateY(${i + 1 === 6 ? "100px" : "-75px"})`;
     return (
         <div
             key={i}
             className={st.symptom}
             onClick={clickHandler}
-            style={{ "--i": i + 1 }}
+            style={{"--i": i + 1}}
         >
             <div className={st.cover}>
                 <Image

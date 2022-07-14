@@ -5,17 +5,23 @@ import Carousel from "../components/Carousel";
 import adultIMG from "../assets/adult.png";
 import babyIMG from "../assets/baby.png";
 
-import {factsAdult, factsBaby, symptoms_text} from "../data/index.js"
+import {factsAdult, factsBaby, symptoms_text} from "../data/index"
 
 import carousel_icons from "../assets/carousel_icons/index";
 import { useEffect, useState } from "react";
+
+interface Symptom {
+    icon: StaticImageData;
+    id:number;
+    text:string;
+}
 
 const Index = () => {
     const [symptoms, setSymptoms] = useState([]);
 
     const  symptomsArray = () => {
         for (let i = 0; i < symptoms_text.length; i++) {
-            const newSymptom = {
+            const newSymptom:Symptom = {
                 id: i,
                 text: symptoms_text[i],
                 icon: carousel_icons[i],
@@ -59,7 +65,7 @@ const Index = () => {
                 </div>
                 <Carousel symptoms={symptoms} icon={adultIMG}/>
             </div>
-            <style jsx>
+            <style /*jsx*/>
                 {`
                     .patient {
                         display: flex;
