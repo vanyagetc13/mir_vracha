@@ -16,7 +16,7 @@ interface SymptomProps {
 const Symptom = ({symptom, i}: SymptomProps) => {
 
     const [visible, setVisible] = useState(false);
-    const clickHandler = () => {
+    const hoverHandler = () => {
         setVisible((prev) => !prev);
     };
 
@@ -35,7 +35,8 @@ const Symptom = ({symptom, i}: SymptomProps) => {
         <div
             key={i}
             className={st.symptom}
-            onClick={clickHandler}
+            onMouseEnter={hoverHandler}
+            onMouseLeave={hoverHandler}
             style={{"--i": i + 1}}
         >
             <div className={st.cover}>
